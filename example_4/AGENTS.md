@@ -16,7 +16,8 @@ código:
 
 - [Padrões de código](.agents/rules/code-standards.md)
 - [Estrutura de pastas](.agents/rules/folder-structure.md)
-- [Regras para React](.agents/rules/react.md)
+- [Skill de React](.agents/skills/react/SKILL.md): carregue-a sempre que criar, alterar, revisar ou interagir com componentes React, hooks customizados ou telas em `frontend/`.
+- [Skill de PR](.agents/skills/pr/SKILL.md): carregue-a sempre que preparar ou abrir uma pull request.
 - [Regras de testes](.agents/rules/tests.md)
 
 ## Frontend
