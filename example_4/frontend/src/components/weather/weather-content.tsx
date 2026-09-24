@@ -20,5 +20,5 @@ interface WeatherMessageProps {
 
 function WeatherMessage({ isError = false, message }: WeatherMessageProps) {
   const color = isError ? 'text-rose-600' : 'text-slate-500'
-  return <div role={isError ? 'alert' : 'status'} className={`flex min-h-72 flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-slate-200 bg-white/60 p-8 text-center ${color}`}><CloudSun aria-hidden="true" size={42} /><p>{message}</p></div>
+  return <div role={isError ? 'alert' : 'status'} className={`flex min-h-72 flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-slate-200 bg-slate-50 p-8 text-center dark:border-slate-700 dark:bg-slate-800/60 ${color}`}><CloudSun aria-hidden="true" size={42} /><p>{message}</p></div>
 }
