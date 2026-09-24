@@ -8,6 +8,7 @@ describe('WeatherContent', () => {
     const initialModel = { weather: null, error: null, isLoading: true }
     const { rerender } = render(<WeatherContent model={initialModel} />)
     // When
+    expect(screen.getByRole('status')).toHaveTextContent('Consultando as condições atuais...')
     rerender(<WeatherContent model={{ weather: null, error: 'City not found', isLoading: false }} />)
     // Then
     expect(screen.getByRole('alert')).toHaveTextContent('City not found')

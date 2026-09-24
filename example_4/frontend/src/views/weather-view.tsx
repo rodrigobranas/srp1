@@ -1,6 +1,7 @@
-import { CloudSun } from 'lucide-react'
-import { ThemeToggle } from '@/components/theme-toggle'
+import { AtmosphereCanvas } from '@/components/weather/atmosphere-canvas'
 import { WeatherContent } from '@/components/weather/weather-content'
+import { WeatherHeader } from '@/components/weather/weather-header'
+import { WeatherIntroduction } from '@/components/weather/weather-introduction'
 import { WeatherSearch } from '@/components/weather/weather-search'
 import { useTheme } from '@/hooks/use-theme'
 import { useWeather } from '@/hooks/use-weather'
@@ -9,19 +10,15 @@ export function WeatherView() {
   const weather = useWeather()
   const { setTheme, theme } = useTheme()
   return (
-    <main className="min-h-screen bg-slate-100 px-5 py-8 text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100 sm:py-12">
-      <div className="mx-auto max-w-xl">
-        <header className="mb-8 text-center">
-          <div className="flex justify-end"><ThemeToggle theme={theme} onThemeChange={setTheme} /></div>
-          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-500 shadow-lg shadow-sky-500/30"><CloudSun aria-hidden="true" size={30} /></div>
-          <h1 className="text-3xl font-bold tracking-tight">Clima agora</h1>
-          <p className="mt-2 text-slate-600 dark:text-slate-300">Consulte as condições atuais de qualquer cidade.</p>
-        </header>
-        <div className="rounded-3xl bg-white p-4 shadow-2xl shadow-slate-900/10 dark:bg-slate-900 dark:shadow-black/30 sm:p-6">
-          <WeatherSearch model={weather} />
-          <div className="mt-5"><WeatherContent model={weather} /></div>
-        </div>
-        <p className="mt-5 text-center text-sm text-slate-500 dark:text-slate-400">Dados meteorológicos fornecidos pela Open-Meteo.</p>
+    <main className="relative min-h-screen overflow-hidden bg-[#e8f0fa] px-5 text-slate-900 transition-colors dark:bg-[#020b17] dark:text-slate-50 sm:px-8">
+      <AtmosphereCanvas isScanning={weather.isLoading} theme={theme} />
+      <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col">
+        <WeatherHeader theme={theme} onThemeChange={setTheme} />
+        <section className="grid flex-1 items-center gap-12 py-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(24rem,0.8fr)] lg:gap-20 lg:py-20">
+          <div><WeatherIntroduction /><div className="mt-12 border-t border-slate-900/15 pt-6 dark:border-cyan-100/15"><WeatherSearch model={weather} /></div></div>
+          <WeatherContent model={weather} />
+        </section>
+        <footer className="flex flex-wrap justify-between gap-3 border-t border-slate-900/10 py-5 text-xs font-medium uppercase tracking-[0.14em] text-slate-500 dark:border-cyan-100/10 dark:text-cyan-50/65"><span>Leitura de condições atuais</span><span>Open-Meteo</span></footer>
       </div>
     </main>
   )

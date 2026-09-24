@@ -14,6 +14,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Instrument Sans', 'sans-serif'],
+        mono: ['Azeret Mono', 'monospace'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -55,6 +59,10 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        'field-settle': {
+          '0%': { opacity: '0', transform: 'translateY(12px)', filter: 'blur(5px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)', filter: 'blur(0)' },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -65,6 +73,7 @@ export default {
         },
       },
       animation: {
+        "field-settle": "field-settle 500ms cubic-bezier(0.16, 1, 0.3, 1) both",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },

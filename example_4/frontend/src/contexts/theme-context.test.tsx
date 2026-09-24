@@ -36,4 +36,13 @@ describe('ThemeProvider', () => {
     expect(screen.getByRole('button', { name: 'dark' })).toBeInTheDocument()
     expect(document.documentElement).toHaveClass('dark')
   })
+
+  it('starts in dark mode when no preference was saved', () => {
+    // Given
+    // When
+    render(<ThemeProvider><ThemeConsumer /></ThemeProvider>)
+    // Then
+    expect(screen.getByRole('button', { name: 'dark' })).toBeInTheDocument()
+    expect(document.documentElement).toHaveClass('dark')
+  })
 })

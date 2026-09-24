@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-24T00:00:00-03:00",
+  "title": "Design System: Clima Agora",
+  "extensions": {
+    "colorMeta": {
+      "midnight": { "role": "neutral", "displayName": "Midnight", "canonical": "#020b17", "tonalRamp": ["oklch(15% 0.035 255)", "oklch(25% 0.035 255)", "oklch(35% 0.035 255)", "oklch(45% 0.035 255)", "oklch(55% 0.035 255)", "oklch(68% 0.035 255)", "oklch(82% 0.035 255)", "oklch(95% 0.035 255)"] },
+      "field": { "role": "neutral", "displayName": "Atmosphere Field", "canonical": "#061528", "tonalRamp": ["oklch(15% 0.045 245)", "oklch(25% 0.045 245)", "oklch(35% 0.045 245)", "oklch(45% 0.045 245)", "oklch(55% 0.045 245)", "oklch(68% 0.045 245)", "oklch(82% 0.045 245)", "oklch(95% 0.045 245)"] },
+      "control-surface": { "role": "neutral", "displayName": "Control Surface", "canonical": "#081a2e", "tonalRamp": ["oklch(15% 0.05 245)", "oklch(25% 0.05 245)", "oklch(35% 0.05 245)", "oklch(45% 0.05 245)", "oklch(55% 0.05 245)", "oklch(68% 0.05 245)", "oklch(82% 0.05 245)", "oklch(95% 0.05 245)"] },
+      "fog": { "role": "neutral", "displayName": "Fog", "canonical": "#f8fafc", "tonalRamp": ["oklch(15% 0.01 250)", "oklch(25% 0.01 250)", "oklch(35% 0.01 250)", "oklch(45% 0.01 250)", "oklch(55% 0.01 250)", "oklch(68% 0.01 250)", "oklch(82% 0.01 250)", "oklch(95% 0.01 250)"] },
+      "daylight": { "role": "neutral", "displayName": "Daylight", "canonical": "#e8f0fa", "tonalRamp": ["oklch(15% 0.02 250)", "oklch(25% 0.02 250)", "oklch(35% 0.02 250)", "oklch(45% 0.02 250)", "oklch(55% 0.02 250)", "oklch(68% 0.02 250)", "oklch(82% 0.02 250)", "oklch(95% 0.02 250)"] },
+      "action-dark": { "role": "primary", "displayName": "Dark Action", "canonical": "#020617", "tonalRamp": ["oklch(15% 0.025 265)", "oklch(25% 0.025 265)", "oklch(35% 0.025 265)", "oklch(45% 0.025 265)", "oklch(55% 0.025 265)", "oklch(68% 0.025 265)", "oklch(82% 0.025 265)", "oklch(95% 0.025 265)"] },
+      "ion": { "role": "primary", "displayName": "Ion Signal", "canonical": "#67e8f9", "tonalRamp": ["oklch(15% 0.105 205)", "oklch(25% 0.105 205)", "oklch(35% 0.105 205)", "oklch(45% 0.105 205)", "oklch(55% 0.105 205)", "oklch(68% 0.105 205)", "oklch(82% 0.105 205)", "oklch(95% 0.105 205)"] },
+      "cyan-deep": { "role": "primary", "displayName": "Deep Cyan Instrument", "canonical": "#0e7490", "tonalRamp": ["oklch(15% 0.09 220)", "oklch(25% 0.09 220)", "oklch(35% 0.09 220)", "oklch(45% 0.09 220)", "oklch(55% 0.09 220)", "oklch(68% 0.09 220)", "oklch(82% 0.09 220)", "oklch(95% 0.09 220)"] },
+      "ultraviolet": { "role": "secondary", "displayName": "Ultraviolet Reference", "canonical": "#a78bfa", "tonalRamp": ["oklch(15% 0.12 295)", "oklch(25% 0.12 295)", "oklch(35% 0.12 295)", "oklch(45% 0.12 295)", "oklch(55% 0.12 295)", "oklch(68% 0.12 295)", "oklch(82% 0.12 295)", "oklch(95% 0.12 295)"] },
+      "alert": { "role": "tertiary", "displayName": "Alert Rose", "canonical": "#f43f5e", "tonalRamp": ["oklch(15% 0.16 15)", "oklch(25% 0.16 15)", "oklch(35% 0.16 15)", "oklch(45% 0.16 15)", "oklch(55% 0.16 15)", "oklch(68% 0.16 15)", "oklch(82% 0.16 15)", "oklch(95% 0.16 15)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Signal Proposition", "purpose": "Short introductory proposition and high-emphasis live reading." },
+      "body": { "displayName": "Atmospheric Body", "purpose": "Explanatory and operational copy." },
+      "label": { "displayName": "Instrument Label", "purpose": "Short uppercase state, provenance, and section labels." },
+      "measurement": { "displayName": "Measured Value", "purpose": "Values in the three-cell weather measurement strip only." }
+    },
+    "shadows": [
+      { "name": "light-rail-lift", "value": "0 18px 40px -30px rgba(15, 23, 42, 0.5)", "purpose": "Light-mode separation for the city search rail." },
+      { "name": "light-bay-lift", "value": "0 24px 60px -42px rgba(8, 47, 73, 0.55)", "purpose": "Light-mode separation for the weather result bay." },
+      { "name": "active-theme-lift", "value": "0 4px 12px rgba(8, 47, 73, 0.35)", "purpose": "Confirms the selected dark-theme toggle button." }
+    ],
+    "motion": [
+      { "name": "field-settle", "value": "500ms cubic-bezier(0.16, 1, 0.3, 1) both", "purpose": "Weather bay resolves from 12px below with a 5px blur cleared at rest." },
+      { "name": "scan-wedge", "value": "canvas rotation: time / 900", "purpose": "A violet scan wedge rotates only while the city request is loading." },
+      { "name": "status-pulse", "value": "2s cubic-bezier(0.4, 0, 0.6, 1) infinite", "purpose": "Only the loading-status dot pulses." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px", "purpose": "Search rail changes from stacked controls to one row; large text and bay orbit scale up." },
+      { "name": "lg", "value": "1024px", "purpose": "Instrument sheet becomes the two-column desktop composition." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Signal Header",
+      "kind": "nav",
+      "refersTo": "navigation-header",
+      "description": "Quiet ruled masthead identifying the station and housing the theme selector.",
+      "html": "<header class=\"ds-header\"><div class=\"ds-brand\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2v20M8 22h8M5 18a10 10 0 0 1 0-12M19 18a10 10 0 0 0 0-12M8 15a5 5 0 0 1 0-6M16 15a5 5 0 0 0 0-6\"/></svg><span>CLIMA AGORA</span></div><div class=\"ds-theme-sample\">◐</div></header>",
+      "css": ".ds-header{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid rgba(207,250,254,.1);color:#f8fafc;font:600 14px/1 'Instrument Sans',sans-serif}.ds-brand{display:flex;align-items:center;gap:12px;letter-spacing:.16em}.ds-brand svg{width:20px;height:20px;fill:none;stroke:#67e8f9;stroke-width:1.7;stroke-linecap:round}.ds-theme-sample{display:grid;place-items:center;width:36px;height:36px;border:1px solid rgba(207,250,254,.15);border-radius:12px;background:#0a1d31;color:#67e8f9;font-size:18px}"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "custom",
+      "refersTo": "theme-toggle-active",
+      "description": "Explicit two-choice light/dark control; the initial selected button is the dark ion state.",
+      "html": "<div class=\"ds-theme-toggle\" role=\"group\" aria-label=\"Selecionar tema\"><button aria-label=\"Tema claro\">☼</button><button class=\"ds-selected\" aria-label=\"Tema escuro\">☾</button></div>",
+      "css": ".ds-theme-toggle{display:inline-flex;gap:2px;padding:4px;border:1px solid rgba(207,250,254,.15);border-radius:12px;background:#0a1d31}.ds-theme-toggle button{display:grid;place-items:center;width:36px;height:36px;padding:0;border:0;border-radius:9px;background:transparent;color:rgba(207,250,254,.45);font:20px/1 sans-serif;cursor:pointer;transition:color 150ms cubic-bezier(.4,0,.2,1),background 150ms cubic-bezier(.4,0,.2,1)}.ds-theme-toggle button:hover{color:#fff}.ds-theme-toggle button:focus-visible{outline:2px solid #22d3ee;outline-offset:2px}.ds-theme-toggle .ds-selected{background:#67e8f9;color:#083344;box-shadow:0 4px 12px rgba(8,47,73,.35)}"
+    },
+    {
+      "name": "City Search Rail",
+      "kind": "input",
+      "refersTo": "search-rail",
+      "description": "One shared city field and action rail, with the action switching to ion in the default dark mode.",
+      "html": "<form class=\"ds-search-rail\"><input aria-label=\"Cidade\" placeholder=\"Ex.: Rio de Janeiro\"/><button type=\"button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg>Buscar clima</button></form>",
+      "css": ".ds-search-rail{display:flex;gap:8px;padding:8px;border:1px solid rgba(207,250,254,.2);border-radius:14px;background:#081a2e;box-shadow:none;transition:border-color 150ms cubic-bezier(.4,0,.2,1)}.ds-search-rail:focus-within{border-color:rgba(8,145,178,.7)}.ds-search-rail input{min-width:0;flex:1;height:48px;padding:0 12px;border:0;outline:0;background:transparent;color:#f8fafc;font:400 16px/1 'Instrument Sans',sans-serif}.ds-search-rail input::placeholder{color:rgba(207,250,254,.65)}.ds-search-rail button{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border:0;border-radius:10px;background:#67e8f9;color:#083344;font:600 14px/1 'Instrument Sans',sans-serif;cursor:pointer;transition:background 150ms cubic-bezier(.4,0,.2,1)}.ds-search-rail button:hover{background:#a5f3fc}.ds-search-rail button:focus-visible{outline:2px solid #22d3ee;outline-offset:2px}.ds-search-rail svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.25;stroke-linecap:round}@media(max-width:639px){.ds-search-rail{flex-direction:column}}"
+    },
+    {
+      "name": "Weather Result Bay",
+      "kind": "card",
+      "refersTo": "weather-bay",
+      "description": "Tall resolved-weather measurement bay whose reading order is location, condition and temperature, then orbital marker and ruled metrics.",
+      "html": "<section class=\"ds-weather-bay\"><div class=\"ds-bay-top\"><span>⌖ São Paulo, Brasil</span><small>CONDIÇÕES ATUAIS</small></div><div class=\"ds-reading\"><div><p>Parcialmente nublado</p><strong>24°</strong></div><div class=\"ds-orbit\"><i></i><b>☼</b></div></div><dl class=\"ds-metrics\"><div><dt>⌁ SENSAÇÃO</dt><dd>25°</dd></div><div><dt>◉ UMIDADE</dt><dd>72%</dd></div><div><dt>↝ VENTO</dt><dd>14 km/h</dd></div></dl></section>",
+      "css": ".ds-weather-bay{min-height:416px;padding:24px;border:1px solid rgba(14,116,144,.2);border-radius:14px;background:#061528;color:#f8fafc;font-family:'Instrument Sans',sans-serif}.ds-bay-top,.ds-reading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.ds-bay-top span{color:rgba(207,250,254,.75);font-weight:500}.ds-bay-top small{color:rgba(207,250,254,.65);font-size:12px;font-weight:500;letter-spacing:.16em}.ds-reading{align-items:center;margin-top:48px}.ds-reading p{margin:0;color:#a5f3fc;font-size:16px;font-weight:500}.ds-reading strong{display:block;margin-top:8px;color:#fff;font-size:80px;line-height:1;letter-spacing:-.04em}.ds-orbit{position:relative;display:grid;place-items:center;width:128px;height:128px;border:1px solid rgba(165,243,252,.2);border-radius:50%;color:#67e8f9}.ds-orbit i{position:absolute;inset:20px;border:1px dashed rgba(196,181,253,.6);border-radius:50%}.ds-orbit b{position:relative;font:400 56px/1 sans-serif}.ds-metrics{display:grid;grid-template-columns:repeat(3,1fr);margin:48px 0 0;padding:16px 0;border-top:1px solid rgba(207,250,254,.1);border-bottom:1px solid rgba(207,250,254,.1)}.ds-metrics div{padding:0 8px;text-align:center}.ds-metrics div+div{border-left:1px solid rgba(207,250,254,.1)}.ds-metrics dt{color:rgba(207,250,254,.55);font-size:12px;letter-spacing:.08em}.ds-metrics dd{margin:4px 0 0;color:#fff;font:600 14px/1.2 'Azeret Mono',monospace}@media(min-width:640px){.ds-weather-bay{padding:32px}.ds-orbit{width:160px;height:160px}.ds-orbit i{inset:28px}.ds-reading strong{font-size:96px}}"
+    },
+    {
+      "name": "Operational Signal State",
+      "kind": "custom",
+      "refersTo": "weather-bay",
+      "description": "A state bay keeps loading, empty, and error responses explicit without changing the result footprint.",
+      "html": "<section class=\"ds-state-bay\"><p class=\"ds-status\"><i></i>SINAL EM VARREDURA</p><div><b>◌</b><p>Consultando as condições atuais...</p></div><small>DADOS VIA OPEN-METEO</small></section>",
+      "css": ".ds-state-bay{display:flex;flex-direction:column;justify-content:space-between;min-height:416px;padding:24px;border:1px solid rgba(14,116,144,.2);border-radius:14px;background:#061528;color:rgba(207,250,254,.6);font-family:'Instrument Sans',sans-serif}.ds-status{display:flex;align-items:center;gap:12px;margin:0;font-size:12px;font-weight:500;letter-spacing:.18em}.ds-status i{width:8px;height:8px;border-radius:50%;background:#22d3ee;animation:ds-pulse 2s cubic-bezier(.4,0,.6,1) infinite}.ds-state-bay b{display:block;margin-bottom:20px;color:#67e8f9;font:54px/1 sans-serif}.ds-state-bay div p{max-width:320px;margin:0;color:#f8fafc;font-size:20px;line-height:32px}.ds-state-bay small{padding-top:16px;border-top:1px solid rgba(207,250,254,.15);font-size:12px;letter-spacing:.16em}@keyframes ds-pulse{50%{opacity:.5}}"
+    },
+    {
+      "name": "Atmosphere Field",
+      "kind": "custom",
+      "refersTo": "weather-bay",
+      "description": "Decorative, pointer-inert contour field that supplies ambient depth behind the entire instrument sheet.",
+      "html": "<div class=\"ds-atmosphere-field\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i></div>",
+      "css": ".ds-atmosphere-field{position:relative;overflow:hidden;width:100%;height:260px;background:radial-gradient(circle at 77% 33%,rgba(74,222,255,.14),rgba(0,0,0,0) 50%)}.ds-atmosphere-field i{position:absolute;left:77%;top:34%;width:var(--ds-w);height:var(--ds-h);border:1px solid rgba(129,230,217,.06);border-radius:50%;transform:translate(-50%,-50%) rotate(-22deg)}.ds-atmosphere-field i:nth-child(1){--ds-w:22%;--ds-h:9%}.ds-atmosphere-field i:nth-child(2){--ds-w:39%;--ds-h:16%}.ds-atmosphere-field i:nth-child(3){--ds-w:56%;--ds-h:23%}.ds-atmosphere-field i:nth-child(4){--ds-w:73%;--ds-h:30%}.ds-atmosphere-field i:nth-child(5){--ds-w:90%;--ds-h:37%}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Nocturnal Signal Station",
+    "overview": "Clima Agora treats a city lookup as an atmospheric reading rather than a miniature forecast dashboard. The default dark mode is a deep, quiet instrument panel: fog-white information, ion-cyan signals, restrained ultraviolet reference marks, and a low-contrast contour field establish presence without competing with the weather reading.\n\nExpression is functional. The canvas field is a live environmental layer, the query is a scan, and the resolved result is a measurement bay that settles into place. A light mode keeps the same calibrated structure for visitors who choose it; it is a counterpart, not a separate visual identity. The system rejects pale, card-heavy weather dashboards, oversized hero metrics detached from context, and decorative weather imagery.",
+    "keyCharacteristics": ["Midnight instrument surfaces with fog-white reading text and rare ion-cyan signals.", "Fine ruled divisions, exact measurement labels, and a real canvas contour field.", "Instrument Sans for language and Azeret Mono only for numerical measurements.", "A single weather bay that makes condition, temperature, location, and supporting values read in order."],
+    "rules": [
+      { "name": "The Rare Signal Rule", "body": "Ion is evidence of a live or actionable system state. Do not use it as a broad fill, a decorative background, or the default color for every label.", "section": "colors" },
+      { "name": "The Single Alarm Rule", "body": "Rose communicates interruption only. Successful, neutral, and loading states stay in the cyan/fog vocabulary and also name their state in text.", "section": "colors" },
+      { "name": "The One Mono Rule", "body": "Use Azeret Mono for values that are being measured, not for titles, paragraphs, navigation, or generic UI labels.", "section": "typography" },
+      { "name": "The Readout Order Rule", "body": "A resolved result must read location and recency first, condition and temperature second, then the three supporting measurements as one strip. Do not fragment them into unrelated stat cards.", "section": "layout" },
+      { "name": "The Field Before Float Rule", "body": "Establish depth with tonal surfaces, hairline rules, and the atmosphere field before adding shadow. Shadows are absent in dark mode and restrained in light mode.", "section": "elevation" }
+    ],
+    "dos": ["Do begin in dark mode when no stored preference exists, and retain the matched light counterpart for an explicit theme choice.", "Do use the contour field, cyan bloom, and scan wedge as atmosphere behind content; keep the canvas decorative and non-interactive.", "Do make city lookup state explicit in Portuguese through label, copy, icon, and status semantics.", "Do use the surface-radius token for the search and weather/state bays, then reduce radius only for embedded actions and small controls.", "Do let current temperature lead the resolved weather bay, with the condition marker as supporting context."],
+    "donts": ["Don't replace the measurement strip with separate KPI cards, pill chips, or a generic forecast grid.", "Don't turn the contour field into a photographic background, shipping raster asset, or high-contrast illustration.", "Don't use ultraviolet as a general-purpose interactive color or rose outside the interrupted-signal state.", "Don't apply broad drop shadows in dark mode or use shadow as the primary way to separate surfaces.", "Don't use mono typography for prose, navigation, or the display proposition."]
+  }
+}

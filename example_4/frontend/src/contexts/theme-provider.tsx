@@ -15,7 +15,9 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 }
 
 function getInitialTheme(): Theme {
-  return localStorage.getItem(storageKey) === 'dark' ? 'dark' : 'light'
+  const storedTheme = localStorage.getItem(storageKey)
+  if (storedTheme === 'light' || storedTheme === 'dark') return storedTheme
+  return 'dark'
 }
 
 function syncTheme(theme: Theme) {

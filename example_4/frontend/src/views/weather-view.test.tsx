@@ -18,5 +18,7 @@ describe('WeatherView', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Buscar clima' }))
     // Then
     expect(await screen.findByText('Manaus, Brazil')).toBeInTheDocument()
+    expect(screen.getByText('O céu tem um sinal.')).toBeInTheDocument()
+    expect(screen.getByText('CLIMA AGORA')).toBeInTheDocument()
   })
 })
