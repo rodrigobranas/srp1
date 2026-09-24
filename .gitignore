@@ -1,0 +1,39 @@
+# Dependências
+node_modules/
+
+# Artefatos de build e cobertura
+dist/
+dist-ssr/
+build/
+out/
+coverage/
+.next/
+.nuxt/
+.angular/
+.vite/
+
+# Arquivos de ambiente (mantenha os exemplos versionados)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Logs e caches
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.cache/
+.eslintcache
+*.tsbuildinfo
+
+# Arquivos do sistema e de IDEs
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
