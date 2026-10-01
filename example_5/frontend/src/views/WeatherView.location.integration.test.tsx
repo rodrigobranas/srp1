@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 import { weatherForecast } from '@/tests/weather-response-fixtures'
 import { WeatherView } from './WeatherView'
+import { ThemeProvider } from '@/contexts/ThemeContext'
 
 describe('WeatherView browser location', () => {
   it('uses granted coordinates with the local label and no reverse geocoding', async () => {
@@ -10,7 +11,7 @@ describe('WeatherView browser location', () => {
     const getCurrentPosition = vi.fn((success: PositionSuccess) => success({ coords: { latitude: 1, longitude: 2 } } as GeolocationPosition))
     const fetchMock = vi.fn().mockResolvedValue(Response.json(weatherForecast()))
     vi.stubGlobal('fetch', fetchMock)
-    render(<WeatherView geolocation={{ getCurrentPosition }} />)
+    render(<ThemeProvider><WeatherView geolocation={{ getCurrentPosition }} /></ThemeProvider>)
     // When
     fireEvent.click(screen.getByRole('button', { name: 'Usar minha localização' }))
     // Then
@@ -26,7 +27,7 @@ describe('WeatherView browser location', () => {
     const fetchMock = vi.fn().mockResolvedValueOnce(Response.json({ locations: [{ ...location, country: 'Portugal' }] })).mockResolvedValueOnce(Response.json(weatherForecast()))
     vi.stubGlobal('fetch', fetchMock)
     const user = userEvent.setup()
-    render(<WeatherView geolocation={{ getCurrentPosition }} />)
+    render(<ThemeProvider><WeatherView geolocation={{ getCurrentPosition }} /></ThemeProvider>)
     // When
     await user.click(screen.getByRole('button', { name: 'Usar minha localização' }))
     expect(await screen.findByRole('alert')).toHaveTextContent('A permissão de localização foi negada')

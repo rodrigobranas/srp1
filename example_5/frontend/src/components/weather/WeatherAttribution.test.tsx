@@ -7,6 +7,7 @@ describe('WeatherAttribution', () => {
     // When
     render(<WeatherAttribution />)
     // Then
+    expect(screen.getByRole('contentinfo').className).toContain('text-muted-foreground')
     expect(screen.getByRole('link', { name: 'Open-Meteo' })).toHaveAttribute('href', 'https://open-meteo.com/')
     expect(screen.getByRole('link', { name: 'GeoNames' })).toHaveAttribute('href', 'https://www.geonames.org/')
   })

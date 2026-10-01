@@ -28,9 +28,9 @@ O `AGENTS.md` e todas as rules em `.agents/rules/` foram lidos: `code-standards.
 
 ## Subtarefas
 
-- [ ] 3.1 Ajustar o fundo, o primeiro plano e `color-scheme` globais para acompanhar os tokens claro/escuro existentes.
-- [ ] 3.2 Revisar cores fixas e estados visuais dos componentes meteorológicos, preservando contraste também no gradiente do cartão atual.
-- [ ] 3.3 Atualizar testes dos componentes afetados para verificar apresentação legível nos dois temas e manter os limites de cobertura.
+- [x] 3.1 Ajustar o fundo, o primeiro plano e `color-scheme` globais para acompanhar os tokens claro/escuro existentes.
+- [x] 3.2 Revisar cores fixas e estados visuais dos componentes meteorológicos, preservando contraste também no gradiente do cartão atual.
+- [x] 3.3 Atualizar testes dos componentes afetados para verificar apresentação legível nos dois temas e manter os limites de cobertura.
 
 ## Detalhes de implementação
 
@@ -47,7 +47,7 @@ Consultar `techspec.md`, seções “Visão dos componentes”, “Abordagem de 
 
 ### Testes de integração (se aplicável)
 
-- [ ] TI-03 — Exibe mensagens e controles nos dois temas
+- [x] TI-03 — Exibe mensagens e controles nos dois temas
 
 ### Testes E2E (se aplicável)
 

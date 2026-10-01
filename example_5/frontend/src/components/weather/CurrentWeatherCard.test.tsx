@@ -15,6 +15,7 @@ describe('CurrentWeatherCard', () => {
     render(<CurrentWeatherCard locationName="São Paulo" country="Brasil" forecast={forecast} />)
     // Then
     expect(screen.getByRole('heading', { name: 'São Paulo, Brasil' })).toBeInTheDocument()
+    expect(screen.getByRole('region', { name: 'São Paulo, Brasil' }).className).toContain('text-white')
     expect(screen.getByText('Parcialmente nublado')).toBeInTheDocument()
     expect(screen.getByText('23,4°C')).toBeInTheDocument()
     expect(screen.getByText('Indisponível')).toBeInTheDocument()

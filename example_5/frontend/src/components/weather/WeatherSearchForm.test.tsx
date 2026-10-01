@@ -12,6 +12,7 @@ describe('WeatherSearchForm', () => {
     await userEvent.type(screen.getByRole('textbox', { name: 'Cidade' }), '{Enter}')
     // Then
     expect(onSearch).toHaveBeenCalledOnce()
+    expect(screen.getByRole('textbox', { name: 'Cidade' }).className).toContain('bg-background')
   })
   it('updates the query and disables the submit action while loading', () => {
     // Given

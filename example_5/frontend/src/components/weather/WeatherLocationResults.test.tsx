@@ -13,7 +13,7 @@ describe('WeatherLocationResults', () => {
     // When
     render(<WeatherLocationResults locations={locations} selectedLocationId={null} onSelect={vi.fn()} />)
     // Then
-    expect(screen.getByRole('button', { name: 'Consultar clima para Paris, Île-de-France, França' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Consultar clima para Paris, Île-de-France, França' }).className).toContain('bg-card')
     expect(screen.getByRole('button', { name: 'Consultar clima para Paris, Texas, Estados Unidos' })).toBeInTheDocument()
   })
   it('returns the selected location when its accessible option is activated', () => {
