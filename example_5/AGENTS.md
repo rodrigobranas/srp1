@@ -57,22 +57,27 @@ verificações disponíveis.
 
 O Vite inicia, por padrão, em `http://localhost:5173`.
 
-O frontend faz uma chamada periódica para `GET http://localhost:3000/health`
-para exibir o estado da API. Essa é a única API consumida atualmente; ela é
-local e pertence ao projeto `backend/`.
+O frontend consulta exclusivamente a API local do projeto `backend/`: busca
+localidades com `GET /weather/locations`, consulta a previsão com
+`POST /weather` e usa `VITE_API_BASE_URL` para definir a origem (padrão
+`http://localhost:3000`). A tela não faz polling de `/health`; esse endpoint
+continua disponível para verificar o processo da API.
 
 ## Backend
 
 ### Tecnologia e estrutura
 
-- Node.js com TypeScript 5
+- Node.js 22.13 ou superior com TypeScript 5
 - Express 5 para a API HTTP
 - `tsx` e Nodemon para desenvolvimento com recarga automática
 - `cors` para permitir chamadas do frontend
 - `dotenv` para carregar variáveis de ambiente
+- Vitest com cobertura V8 para testes; Supertest para testes HTTP
 
 O código-fonte fica em `backend/src/`. O build TypeScript é emitido em
-`backend/dist/` como CommonJS, tendo `src/index.ts` como ponto de entrada.
+`backend/dist/` como CommonJS, tendo `src/index.ts` como ponto de entrada. O
+build usa `tsconfig.build.json`, que exclui os arquivos `*.test.ts` e
+`src/tests/`.
 
 ### Comandos
 
@@ -85,13 +90,18 @@ Execute os comandos a partir de `backend/`:
 | Adicionar uma dependência de produção | `npm install <pacote>` |
 | Adicionar uma dependência de desenvolvimento | `npm install -D <pacote>` |
 | Iniciar em desenvolvimento, com recarga automática | `npm run dev` |
+| Validar o código com ESLint | `npm run lint` |
 | Compilar TypeScript para `dist/` | `npm run build` |
 | Executar o build compilado | `npm start` |
-| Executar o comando de testes atual | `npm test` |
+| Verificar os tipos TypeScript, incluindo testes | `npm run typecheck` |
+| Executar os testes uma vez | `npm test` |
+| Executar os testes em modo observação | `npm run test:watch` |
+| Executar os testes com cobertura mínima de 80% | `npm run test:coverage` |
 
-Ainda não há testes automatizados configurados no backend. O script atual de
-`npm test` termina com erro e informa que não há testes especificados; atualize
-o script e adicione uma ferramenta de testes ao criar a primeira suíte.
+Os testes ficam junto ao arquivo testado, com o sufixo `*.test.ts`; fixtures e
+utilitários de teste compartilhados ficam em `backend/src/tests/`. A
+configuração está em `backend/vitest.config.mts`, e o comando de cobertura
+falha quando linhas, funções, branches ou statements ficam abaixo de 80%.
 
 ### Porta, variáveis e endpoints
 
@@ -103,6 +113,8 @@ O endpoint disponível é:
 | Método | Caminho | Finalidade |
 | --- | --- | --- |
 | `GET` | `/health` | Retorna o estado da API e um timestamp. |
+| `GET` | `/weather/locations?query=<cidade>` | Busca até dez localidades para desambiguação. |
+| `POST` | `/weather` | Retorna condições atuais e sete dias de previsão para latitude e longitude. |
 
 ## Dependências e serviços externos
 
@@ -110,8 +122,12 @@ Os projetos possuem somente as dependências npm declaradas em seus respectivos
 `package.json`. Consulte esses arquivos e os respectivos `package-lock.json`
 antes de alterar versões ou adicionar pacotes.
 
-Não há banco de dados, ORM, fila, cache, serviço de autenticação ou API externa
-configurados no estado atual do repositório. A única comunicação entre projetos
-é a chamada do frontend para o endpoint local de saúde do backend. Caso uma
-integração externa ou banco de dados seja adicionado, documente aqui as
-credenciais esperadas, variáveis de ambiente, porta e comandos de execução.
+O backend consulta a Geocoding API e a Weather Forecast API da Open-Meteo; não
+é necessária chave de API e as chamadas externas têm timeout de quatro
+segundos. A atribuição meteorológica à Open-Meteo e a atribuição de
+geocodificação ao GeoNames são exibidas no frontend. A origem do backend pode
+ser configurada no frontend com `VITE_API_BASE_URL`; a porta da API permanece
+configurável com `PORT` no backend.
+
+Não há banco de dados, ORM, fila, cache ou serviço de autenticação configurado.
+As consultas meteorológicas são transitórias e não são persistidas.

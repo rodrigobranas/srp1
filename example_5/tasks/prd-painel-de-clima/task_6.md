@@ -32,12 +32,12 @@ Leitura confirmada do AGENTS.md e de todas as rules em .agents/rules/: code-stan
 
 ## Subtarefas
 
-- [ ] 6.1 Criar WeatherView para compor formulário, localidades, clima atual, previsão, feedback, localização e atribuição.
-- [ ] 6.2 Atualizar App.tsx para exibir WeatherView e remover o polling do navegador para /health, mantendo o endpoint no backend.
-- [ ] 6.3 Criar testes React de integração para busca, seleção de cidade homônima, renderização dos dados e estados acessíveis.
-- [ ] 6.4 Criar teste React de integração para geolocalização autorizada e recusada, verificando o rótulo “Sua localização” e a ausência de geocodificação reversa.
-- [ ] 6.5 Verificar navegação por teclado, foco, responsividade, atribuição e ausência de chamadas do frontend às URLs Open-Meteo.
-- [ ] 6.6 Na implementação, rodar lint, typecheck, build e test:coverage nos dois projetos e corrigir falhas até atender às regras de cobertura.
+- [x] 6.1 Criar WeatherView para compor formulário, localidades, clima atual, previsão, feedback, localização e atribuição.
+- [x] 6.2 Atualizar App.tsx para exibir WeatherView e remover o polling do navegador para /health, mantendo o endpoint no backend.
+- [x] 6.3 Criar testes React de integração para busca, seleção de cidade homônima, renderização dos dados e estados acessíveis.
+- [x] 6.4 Criar teste React de integração para geolocalização autorizada e recusada, verificando o rótulo “Sua localização” e a ausência de geocodificação reversa.
+- [x] 6.5 Verificar navegação por teclado, foco, responsividade, atribuição e ausência de chamadas do frontend às URLs Open-Meteo.
+- [x] 6.6 Na implementação, rodar lint, typecheck, build e test:coverage nos dois projetos e corrigir falhas até atender às regras de cobertura.
 
 ## Detalhes de implementação
 
@@ -63,8 +63,8 @@ Os casos unitários TU-01 a TU-08 estão atribuídos às tarefas 1.0, 3.0 e 5.0.
 
 ### Testes de integração
 
-- [ ] TI-04 — Completa fluxo React de busca, seleção e renderização
-- [ ] TI-05 — Consulta coordenadas do navegador sem geocodificação reversa
+- [x] TI-04 — Completa fluxo React de busca, seleção e renderização
+- [x] TI-05 — Consulta coordenadas do navegador sem geocodificação reversa
 
 ### Testes E2E
 

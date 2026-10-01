@@ -30,11 +30,11 @@ Leitura confirmada do AGENTS.md e de todas as rules em .agents/rules/: code-stan
 
 ## Subtarefas
 
-- [ ] 4.1 Criar formulário de busca e lista acessível de localidades com nome, região e país.
-- [ ] 4.2 Criar cartão de clima atual e previsão de hoje mais os seis dias seguintes, com condição e mínima/máxima.
-- [ ] 4.3 Criar estados de carregamento, entrada inválida, sem resultados, erro e localização recusada com mensagens acessíveis.
-- [ ] 4.4 Criar a ação visual de localização e atribuição visível com links para Open-Meteo e GeoNames.
-- [ ] 4.5 Adicionar testes unitários de apresentação para os componentes com comportamento, incluindo rótulos, estados e conteúdo.
+- [x] 4.1 Criar formulário de busca e lista acessível de localidades com nome, região e país.
+- [x] 4.2 Criar cartão de clima atual e previsão de hoje mais os seis dias seguintes, com condição e mínima/máxima.
+- [x] 4.3 Criar estados de carregamento, entrada inválida, sem resultados, erro e localização recusada com mensagens acessíveis.
+- [x] 4.4 Criar a ação visual de localização e atribuição visível com links para Open-Meteo e GeoNames.
+- [x] 4.5 Adicionar testes unitários de apresentação para os componentes com comportamento, incluindo rótulos, estados e conteúdo.
 
 ## Detalhes de implementação
 

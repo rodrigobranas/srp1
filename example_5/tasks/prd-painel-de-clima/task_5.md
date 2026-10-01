@@ -30,11 +30,11 @@ Leitura confirmada do AGENTS.md e de todas as rules em .agents/rules/: code-stan
 
 ## Subtarefas
 
-- [ ] 5.1 Implementar use-weather para busca, seleção de localidade, consulta, estados e cancelamento ou descarte de respostas obsoletas.
-- [ ] 5.2 Implementar use-browser-location para encapsular navigator.geolocation e solicitar posição somente após invocação explícita.
-- [ ] 5.3 Consultar clima pelas coordenadas recebidas no fluxo de localização e apresentar o resultado com o rótulo “Sua localização”, sem geocodificação reversa.
-- [ ] 5.4 Tratar permissão negada, ausência de suporte e falha de posição com feedback recuperável e busca manual disponível.
-- [ ] 5.5 Testar invocação explícita, falha de permissão, preservação do fluxo manual e ordenação de respostas concorrentes.
+- [x] 5.1 Implementar use-weather para busca, seleção de localidade, consulta, estados e cancelamento ou descarte de respostas obsoletas.
+- [x] 5.2 Implementar use-browser-location para encapsular navigator.geolocation e solicitar posição somente após invocação explícita.
+- [x] 5.3 Consultar clima pelas coordenadas recebidas no fluxo de localização e apresentar o resultado com o rótulo “Sua localização”, sem geocodificação reversa.
+- [x] 5.4 Tratar permissão negada, ausência de suporte e falha de posição com feedback recuperável e busca manual disponível.
+- [x] 5.5 Testar invocação explícita, falha de permissão, preservação do fluxo manual e ordenação de respostas concorrentes.
 
 ## Detalhes de implementação
 
@@ -53,8 +53,8 @@ Consultar na techspec.md as seções Fluxo de cidade, Geolocation API do navegad
 
 ### Testes de unidade
 
-- [ ] TU-07 — Solicita localização somente quando a ação é invocada
-- [ ] TU-08 — Impede resposta antiga de substituir consulta mais recente
+- [x] TU-07 — Solicita localização somente quando a ação é invocada
+- [x] TU-08 — Impede resposta antiga de substituir consulta mais recente
 
 ### Testes de integração
 

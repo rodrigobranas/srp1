@@ -28,11 +28,11 @@ Leitura confirmada do AGENTS.md e de todas as rules em .agents/rules/: code-stan
 
 ## Subtarefas
 
-- [ ] 3.1 Configurar Vitest, jsdom, Testing Library, user-event, cobertura V8 e scripts de teste no frontend.
-- [ ] 3.2 Definir tipos TypeScript para localidades, coordenadas, clima atual, previsão diária e erros HTTP.
-- [ ] 3.3 Implementar o serviço frontend para GET /weather/locations e POST /weather, com suporte a AbortSignal e sem URLs de provedores externos.
-- [ ] 3.4 Implementar utilitários puros para rótulos WMO e apresentação de datas/horários no fuso retornado pela API.
-- [ ] 3.5 Cobrir o mapeamento WMO, fallback desconhecido, formatação local e uso exclusivo da base/rotas do backend.
+- [x] 3.1 Configurar Vitest, jsdom, Testing Library, user-event, cobertura V8 e scripts de teste no frontend.
+- [x] 3.2 Definir tipos TypeScript para localidades, coordenadas, clima atual, previsão diária e erros HTTP.
+- [x] 3.3 Implementar o serviço frontend para GET /weather/locations e POST /weather, com suporte a AbortSignal e sem URLs de provedores externos.
+- [x] 3.4 Implementar utilitários puros para rótulos WMO e apresentação de datas/horários no fuso retornado pela API.
+- [x] 3.5 Cobrir o mapeamento WMO, fallback desconhecido, formatação local e uso exclusivo da base/rotas do backend.
 
 ## Detalhes de implementação
 
@@ -48,8 +48,8 @@ Consultar na techspec.md as seções Arquitetura do sistema, Modelos de dados, E
 
 ### Testes de unidade
 
-- [ ] TU-05 — Traduz códigos WMO conhecidos e desconhecidos
-- [ ] TU-06 — Usa somente a base e rotas do backend no service frontend
+- [x] TU-05 — Traduz códigos WMO conhecidos e desconhecidos
+- [x] TU-06 — Usa somente a base e rotas do backend no service frontend
 
 ### Testes de integração
 

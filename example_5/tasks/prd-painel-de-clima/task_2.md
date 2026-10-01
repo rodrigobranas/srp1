@@ -29,11 +29,11 @@ Leitura confirmada do AGENTS.md e de todas as rules em .agents/rules/: code-stan
 
 ## Subtarefas
 
-- [ ] 2.1 Extrair a criação do Express para createApp, permitindo injetar o serviço nos testes, e manter o listener em backend/src/index.ts.
-- [ ] 2.2 Implementar as rotas, validação HTTP, serialização, envelope de erros e Cache-Control: no-store para a consulta de clima.
-- [ ] 2.3 Adicionar eventos JSON de início/fim com rota, duração, resultado e categoria de erro, sem query, coordenadas ou payload do provedor.
-- [ ] 2.4 Criar testes de integração Supertest para busca, lista vazia, entradas inválidas, previsão de sete dias e erros upstream.
-- [ ] 2.5 Verificar que o contrato legado GET /health continua respondendo após a extração da aplicação.
+- [x] 2.1 Extrair a criação do Express para createApp, permitindo injetar o serviço nos testes, e manter o listener em backend/src/index.ts.
+- [x] 2.2 Implementar as rotas, validação HTTP, serialização, envelope de erros e Cache-Control: no-store para a consulta de clima.
+- [x] 2.3 Adicionar eventos JSON de início/fim com rota, duração, resultado e categoria de erro, sem query, coordenadas ou payload do provedor.
+- [x] 2.4 Criar testes de integração Supertest para busca, lista vazia, entradas inválidas, previsão de sete dias e erros upstream.
+- [x] 2.5 Verificar que o contrato legado GET /health continua respondendo após a extração da aplicação.
 
 ## Detalhes de implementação
 
@@ -58,10 +58,10 @@ Não há casos de unidade da TechSpec adicionais atribuídos a esta tarefa; TU-0
 
 ### Testes de integração
 
-- [ ] TI-01 — Busca localidades por nome e trata lista vazia e query inválida
-- [ ] TI-02 — Consulta clima por coordenadas e entrega sete datas
-- [ ] TI-03 — Devolve falha externa como erro estável sem vazar conteúdo
-- [ ] TI-06 — Registra duração e resultado sem dados de localização
+- [x] TI-01 — Busca localidades por nome e trata lista vazia e query inválida
+- [x] TI-02 — Consulta clima por coordenadas e entrega sete datas
+- [x] TI-03 — Devolve falha externa como erro estável sem vazar conteúdo
+- [x] TI-06 — Registra duração e resultado sem dados de localização
 
 ### Testes E2E
 
