@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 import { parisMatches, weatherForecast } from '@/tests/weather-response-fixtures'
 import { WeatherView } from './WeatherView'
+import { ThemeProvider } from '@/contexts/ThemeContext'
 
 describe('WeatherView city search', () => {
   it('searches the backend, distinguishes homonyms and renders the selected city forecast', async () => {
@@ -10,7 +11,7 @@ describe('WeatherView city search', () => {
     const fetchMock = vi.fn().mockResolvedValueOnce(Response.json({ locations: parisMatches })).mockResolvedValueOnce(Response.json(weatherForecast()))
     vi.stubGlobal('fetch', fetchMock)
     const user = userEvent.setup()
-    render(<WeatherView geolocation={null} />)
+    render(<ThemeProvider><WeatherView geolocation={null} /></ThemeProvider>)
     const search = screen.getByRole('textbox', { name: 'Cidade' })
     // When
     await user.type(search, 'Paris')
@@ -39,7 +40,7 @@ describe('WeatherView city search', () => {
       .mockResolvedValueOnce(Response.json(weatherForecast()))
     vi.stubGlobal('fetch', fetchMock)
     const user = userEvent.setup()
-    render(<WeatherView geolocation={null} />)
+    render(<ThemeProvider><WeatherView geolocation={null} /></ThemeProvider>)
     // When
     await user.type(screen.getByRole('textbox', { name: 'Cidade' }), 'Paris')
     await user.keyboard('{Enter}')
@@ -55,7 +56,7 @@ describe('WeatherView city search', () => {
     const fetchMock = vi.fn().mockResolvedValue(Response.json({ locations: [] }))
     vi.stubGlobal('fetch', fetchMock)
     const user = userEvent.setup()
-    render(<WeatherView geolocation={null} />)
+    render(<ThemeProvider><WeatherView geolocation={null} /></ThemeProvider>)
     // When
     const search = screen.getByRole('textbox', { name: 'Cidade' })
     await user.type(search, 'Zzqville')

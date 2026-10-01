@@ -17,5 +17,6 @@ describe('WeatherLocationButton', () => {
     render(<WeatherLocationButton isLoading={false} isDisabled onLocate={vi.fn()} />)
     // Then
     expect(screen.getByRole('button', { name: 'Usar minha localização' })).toBeDisabled()
+    expect(screen.getByRole('button', { name: 'Usar minha localização' }).className).toContain('bg-secondary')
   })
 })

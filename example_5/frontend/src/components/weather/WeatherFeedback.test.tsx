@@ -18,6 +18,7 @@ describe('WeatherFeedback', () => {
     rerender(<WeatherFeedback state="invalid" />)
     // Then
     expect(screen.getByRole('alert')).toHaveTextContent('Informe o nome de uma cidade')
+    expect(screen.getByRole('alert').className).toContain('bg-destructive/10')
   })
   it('offers an explicit retry for recoverable service errors', () => {
     // Given

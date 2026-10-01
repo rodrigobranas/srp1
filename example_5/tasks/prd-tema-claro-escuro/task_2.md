@@ -30,10 +30,10 @@ O `AGENTS.md` e todas as rules em `.agents/rules/` foram lidos: `code-standards.
 
 ## Subtarefas
 
-- [ ] 2.1 Criar `ThemeToggle` com nome acessível estável “Alternar tema”, `aria-pressed` (`true` para escuro, `false` para claro) e ícone decorativo.
-- [ ] 2.2 Inserir o botão no cabeçalho existente de `WeatherView`, mantendo o foco visível e o layout utilizável em telas móveis e desktop.
-- [ ] 2.3 Atualizar testes de `App` e `WeatherView` para prover o contexto, verificar estado acessível, ativação por teclado e manutenção do estado da tela.
-- [ ] 2.4 Verificar que alternar o tema durante operações meteorológicas não desmonta a tela nem inicia consultas adicionais.
+- [x] 2.1 Criar `ThemeToggle` com nome acessível estável “Alternar tema”, `aria-pressed` (`true` para escuro, `false` para claro) e ícone decorativo.
+- [x] 2.2 Inserir o botão no cabeçalho existente de `WeatherView`, mantendo o foco visível e o layout utilizável em telas móveis e desktop.
+- [x] 2.3 Atualizar testes de `App` e `WeatherView` para prover o contexto, verificar estado acessível, ativação por teclado e manutenção do estado da tela.
+- [x] 2.4 Verificar que alternar o tema durante operações meteorológicas não desmonta a tela nem inicia consultas adicionais.
 
 ## Detalhes de implementação
 
@@ -53,9 +53,9 @@ Consultar `techspec.md`, seções “Visão dos componentes”, “Design de imp
 
 ### Testes de integração (se aplicável)
 
-- [ ] TI-01 — Alterna o tema da tela do clima e o estado acessível sem recarregar
-- [ ] TI-02 — Alterna tema com Enter e Espaço no botão do cabeçalho
-- [ ] TI-04 — Alternar tema não reinicia operações meteorológicas
+- [x] TI-01 — Alterna o tema da tela do clima e o estado acessível sem recarregar
+- [x] TI-02 — Alterna tema com Enter e Espaço no botão do cabeçalho
+- [x] TI-04 — Alternar tema não reinicia operações meteorológicas
 
 ### Testes E2E (se aplicável)
 

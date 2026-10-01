@@ -30,12 +30,12 @@ O `AGENTS.md` e todas as rules em `.agents/rules/` foram lidos: `code-standards.
 
 ## Subtarefas
 
-- [ ] 4.1 Preparar a aplicação e o navegador em ambiente isolado; registrar as portas e os serviços iniciados para a validação.
-- [ ] 4.2 Abrir uma nova aba, selecionar o tema claro, recarregar a mesma aba e confirmar a restauração; fechar a aba e abrir ou duplicar outra para confirmar o tema escuro.
-- [ ] 4.3 Durante uma busca meteorológica, alternar os temas e confirmar que a tela, os resultados e as mensagens permanecem disponíveis e legíveis, sem requisição adicional causada pela troca.
-- [ ] 4.4 Reexecutar os casos de unidade e integração da TechSpec e confirmar a cobertura mínima de 80% em linhas, funções, branches e statements.
-- [ ] 4.5 Conferir no navegador foco visível, teclas Enter e Espaço, nome acessível, estado anunciado, contraste e responsividade nos estados principais da tela.
-- [ ] 4.6 Registrar a verificação dos critérios de aceitação, resultados e evidências visuais em `tasks/prd-tema-claro-escuro/qa.md` e `tasks/prd-tema-claro-escuro/evidences/`; encerrar os serviços iniciados.
+- [x] 4.1 Preparar a aplicação e o navegador em ambiente isolado; registrar as portas e os serviços iniciados para a validação.
+- [x] 4.2 Abrir uma nova aba, selecionar o tema claro, recarregar a mesma aba e confirmar a restauração; fechar a aba e abrir ou duplicar outra para confirmar o tema escuro.
+- [x] 4.3 Durante uma busca meteorológica, alternar os temas e confirmar que a tela, os resultados e as mensagens permanecem disponíveis e legíveis, sem requisição adicional causada pela troca.
+- [x] 4.4 Reexecutar os casos de unidade e integração da TechSpec e confirmar a cobertura mínima de 80% em linhas, funções, branches e statements.
+- [x] 4.5 Conferir no navegador foco visível, teclas Enter e Espaço, nome acessível, estado anunciado, contraste e responsividade nos estados principais da tela.
+- [x] 4.6 Registrar a verificação dos critérios de aceitação, resultados e evidências visuais em `tasks/prd-tema-claro-escuro/qa.md` e `tasks/prd-tema-claro-escuro/evidences/`; encerrar os serviços iniciados.
 
 ## Detalhes de implementação
 
@@ -57,21 +57,21 @@ Consultar `techspec.md`, seções “Abordagem de testes”, “Riscos conhecido
 
 ### Testes de unidade (se aplicável)
 
-- [ ] TU-01 — Usa tema escuro em navegação nova mesmo com preferência copiada
-- [ ] TU-02 — Restaura escolha válida ao recarregar a mesma aba
-- [ ] TU-03 — Usa tema escuro para valor inválido ou armazenamento indisponível
+- [x] TU-01 — Usa tema escuro em navegação nova mesmo com preferência copiada
+- [x] TU-02 — Restaura escolha válida ao recarregar a mesma aba
+- [x] TU-03 — Usa tema escuro para valor inválido ou armazenamento indisponível
 
 ### Testes de integração (se aplicável)
 
-- [ ] TI-01 — Alterna o tema da tela do clima e o estado acessível sem recarregar
-- [ ] TI-02 — Alterna tema com Enter e Espaço no botão do cabeçalho
-- [ ] TI-03 — Exibe mensagens e controles nos dois temas
-- [ ] TI-04 — Alternar tema não reinicia operações meteorológicas
+- [x] TI-01 — Alterna o tema da tela do clima e o estado acessível sem recarregar
+- [x] TI-02 — Alterna tema com Enter e Espaço no botão do cabeçalho
+- [x] TI-03 — Exibe mensagens e controles nos dois temas
+- [x] TI-04 — Alternar tema não reinicia operações meteorológicas
 
 ### Testes E2E (se aplicável)
 
-- [ ] E2E-01 — Mantém tema manual no reload e inicia escuro após fechar, abrir ou duplicar uma aba (manual)
-- [ ] E2E-02 — Alterna tema durante busca e consulta resultados meteorológicos (manual)
+- [x] E2E-01 — Mantém tema manual no reload e inicia escuro após fechar, abrir ou duplicar uma aba (manual)
+- [x] E2E-02 — Alterna tema durante busca e consulta resultados meteorológicos (manual)
 
 ## Arquivos relevantes
 

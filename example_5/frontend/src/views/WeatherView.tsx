@@ -7,6 +7,7 @@ import { WeatherFeedback } from '@/components/weather/WeatherFeedback'
 import { WeatherLocationButton } from '@/components/weather/WeatherLocationButton'
 import { WeatherLocationResults } from '@/components/weather/WeatherLocationResults'
 import { WeatherSearchForm } from '@/components/weather/WeatherSearchForm'
+import { ThemeToggle } from '@/components/theme/ThemeToggle'
 import { useWeather } from '@/hooks/use-weather'
 import { BrowserGeolocation } from '@/hooks/use-browser-location'
 import { TemperatureUnit } from '@/types/temperature'
@@ -20,14 +21,14 @@ export function WeatherView({ geolocation }: WeatherViewProps) {
   const [temperatureUnit, setTemperatureUnit] = useState<TemperatureUnit>('celsius')
   const toggleTemperatureUnit = () => setTemperatureUnit((unit) => unit === 'celsius' ? 'fahrenheit' : 'celsius')
   return (
-    <main id="weather-main" className="min-h-screen bg-slate-50 text-slate-900">
-      <a className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:shadow-lg" href="#city-search">Pular para busca</a>
+    <main id="weather-main" className="min-h-screen bg-background text-foreground">
+      <a className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-background focus:px-4 focus:py-3 focus:text-foreground focus:shadow-lg" href="#city-search">Pular para busca</a>
       <div className="mx-auto flex max-w-6xl flex-col gap-7 px-4 py-8 sm:px-8 sm:py-12">
-        <header className="flex max-w-3xl flex-col gap-5 sm:flex-row sm:items-start sm:justify-between"><div><p className="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Painel de clima</p><h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">O clima para os seus planos</h1><p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">Pesquise uma cidade para ver as condições atuais e a previsão local para os próximos sete dias.</p></div><TemperatureUnitToggle unit={temperatureUnit} onToggle={toggleTemperatureUnit} /></header>
-        <section aria-label="Buscar clima" className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
+        <header className="flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"><div><p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Painel de clima</p><h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">O clima para os seus planos</h1><p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">Pesquise uma cidade para ver as condições atuais e a previsão local para os próximos sete dias.</p></div><div className="flex flex-wrap items-center gap-3"><TemperatureUnitToggle unit={temperatureUnit} onToggle={toggleTemperatureUnit} /><ThemeToggle /></div></header>
+        <section aria-label="Buscar clima" className="rounded-3xl border border-border bg-card p-5 text-card-foreground shadow-sm sm:p-7">
           <div className="space-y-5">
             <WeatherSearchForm value={weather.query} isLoading={weather.isLoading} feedbackId="weather-feedback" onChange={weather.setQuery} onSearch={weather.search} />
-            <div className="flex flex-col items-start gap-2 border-t border-slate-100 pt-4 sm:flex-row sm:items-center"><WeatherLocationButton isLoading={weather.isLocating} isDisabled={weather.isLoading} onLocate={weather.locate} /><p className="text-sm text-slate-500">Sua localização só será usada se você escolher esta opção.</p></div>
+            <div className="flex flex-col items-start gap-2 border-t border-border pt-4 sm:flex-row sm:items-center"><WeatherLocationButton isLoading={weather.isLocating} isDisabled={weather.isLoading} onLocate={weather.locate} /><p className="text-sm text-muted-foreground">Sua localização só será usada se você escolher esta opção.</p></div>
             <WeatherFeedback state={weather.feedbackState} message={weather.feedbackMessage ?? undefined} onRetry={weather.retry} />
             <WeatherLocationResults locations={weather.locations} selectedLocationId={weather.selectedLocation?.id ?? null} onSelect={weather.selectLocation} />
           </div>

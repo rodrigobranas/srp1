@@ -29,10 +29,10 @@ O `AGENTS.md` e todas as rules em `.agents/rules/` foram lidos: `code-standards.
 
 ## Subtarefas
 
-- [ ] 1.1 Implementar a resolução e persistência da preferência em `sessionStorage`, aceitando apenas `light` e `dark` e restaurando valor salvo somente quando a navegação atual for uma recarga.
-- [ ] 1.2 Implementar `ThemeContext` e `useTheme` para manter o estado global, alterná-lo e sincronizar a classe `dark` no elemento raiz antes da pintura.
-- [ ] 1.3 Integrar `ThemeProvider` em `main.tsx`, preservar `StrictMode` e preparar o meta `theme-color` inicial que será atualizado junto ao tema.
-- [ ] 1.4 Criar testes de unidade para preferência copiada em navegação nova, restauração após recarga, valor inválido e falha de acesso ao armazenamento; manter o limite de cobertura do frontend.
+- [x] 1.1 Implementar a resolução e persistência da preferência em `sessionStorage`, aceitando apenas `light` e `dark` e restaurando valor salvo somente quando a navegação atual for uma recarga.
+- [x] 1.2 Implementar `ThemeContext` e `useTheme` para manter o estado global, alterná-lo e sincronizar a classe `dark` no elemento raiz antes da pintura.
+- [x] 1.3 Integrar `ThemeProvider` em `main.tsx`, preservar `StrictMode` e preparar o meta `theme-color` inicial que será atualizado junto ao tema.
+- [x] 1.4 Criar testes de unidade para preferência copiada em navegação nova, restauração após recarga, valor inválido e falha de acesso ao armazenamento; manter o limite de cobertura do frontend.
 
 ## Detalhes de implementação
 
@@ -48,9 +48,9 @@ Consultar `techspec.md`, seções “Visão dos componentes”, “Design de imp
 
 ### Testes de unidade (se aplicável)
 
-- [ ] TU-01 — Usa tema escuro em navegação nova mesmo com preferência copiada
-- [ ] TU-02 — Restaura escolha válida ao recarregar a mesma aba
-- [ ] TU-03 — Usa tema escuro para valor inválido ou armazenamento indisponível
+- [x] TU-01 — Usa tema escuro em navegação nova mesmo com preferência copiada
+- [x] TU-02 — Restaura escolha válida ao recarregar a mesma aba
+- [x] TU-03 — Usa tema escuro para valor inválido ou armazenamento indisponível
 
 ### Testes de integração (se aplicável)
 

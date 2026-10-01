@@ -14,6 +14,7 @@ describe('DailyForecast', () => {
     // Then
     const forecast = screen.getByRole('list', { name: 'Previsão para sete dias' })
     expect(within(forecast).getAllByRole('listitem')).toHaveLength(7)
+    expect(within(forecast).getAllByRole('listitem')[0].className).toContain('bg-card')
     expect(within(forecast).getAllByText('Chuva leve')).toHaveLength(7)
     expect(within(forecast).getByText('Indisponível')).toBeInTheDocument()
     expect(within(forecast).getAllByText('25°C')).toHaveLength(7)
