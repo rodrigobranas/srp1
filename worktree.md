@@ -1,7 +1,3 @@
-# L3 Manager
-
-## Spec-Driven Development
-
 ## Worktree
 
 ### Creation
