@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manual de referência do Painel de clima: busca por cidade, previsão, unidades, aparência e privacidade.">
+  <title>Manual do produto — Painel de clima</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Manual do Painel de clima, início">
+      <span class="brand-mark" aria-hidden="true">☼</span>
+      <span>Guia do produto</span>
+    </a>
+    <nav class="top-links" aria-label="Atalhos do manual">
+      <a href="#buscar">Buscar clima</a>
+      <a href="#personalizar">Personalizar</a>
+      <a href="#ajuda">Ajuda</a>
+    </nav>
+    <span class="edition">Manual de referência <span aria-hidden="true">·</span> 01 out 2026</span>
+  </header>
+
+  <div class="page-layout" id="inicio">
+    <aside class="sidebar" aria-label="Índice do manual">
+      <p class="sidebar-kicker">PAINEL DE CLIMA</p>
+      <h2>Neste manual</h2>
+      <nav>
+        <a href="#visao-geral">Visão geral</a>
+        <a href="#buscar">Consultar uma cidade</a>
+        <a href="#resultados">Entender os resultados</a>
+        <a href="#temperatura">Celsius e Fahrenheit</a>
+        <a href="#aparencia">Tema visual</a>
+        <a href="#localizacao">Usar localização</a>
+        <a href="#ajuda">Problemas e privacidade</a>
+        <a href="#referencias">Referências</a>
+      </nav>
+      <div class="sidebar-note">
+        <span class="note-icon" aria-hidden="true">i</span>
+        <p>Este guia descreve requisitos registrados. As fontes não confirmam a implementação em produção.</p>
+      </div>
+    </aside>
+
+    <main id="conteudo">
+      <section class="hero" aria-labelledby="titulo">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> MANUAL DO PRODUTO</p>
+          <h1 id="titulo">Painel de clima</h1>
+          <p class="hero-lede">Consulte as condições atuais de uma cidade e acompanhe a previsão local para hoje e os próximos seis dias.</p>
+          <a class="hero-link" href="#buscar">Começar pelo passo a passo <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="cloud cloud-back"></div>
+          <div class="cloud cloud-front"><i></i><b></b></div>
+          <span class="weather-lines line-one"></span>
+          <span class="weather-lines line-two"></span>
+          <span class="hero-temp">°</span>
+          <span class="hero-caption">tempo local</span>
+        </div>
+      </section>
+
+      <div class="scope-banner" role="note">
+        <span class="scope-icon" aria-hidden="true">!</span>
+        <p><strong>Sobre este manual:</strong> ele foi elaborado a partir dos PRDs e da wiki do produto. A existência das funções descritas na versão em produção ainda precisa ser confirmada.</p>
+      </div>
+
+      <section class="content-section overview" id="visao-geral" aria-labelledby="visao-titulo">
+        <div class="section-heading">
+          <p class="eyebrow">EM POUCOS PASSOS</p>
+          <h2 id="visao-titulo">Da cidade à previsão</h2>
+          <p>O fluxo principal foi pensado para visitantes e não exige uma conta.</p>
+        </div>
+        <div class="overview-grid">
+          <article class="overview-card">
+            <span class="card-number">01</span>
+            <h3>Escolha a cidade</h3>
+            <p>Digite o nome e selecione a localidade correta quando houver nomes iguais.</p>
+          </article>
+          <article class="overview-card">
+            <span class="card-number">02</span>
+            <h3>Veja as condições</h3>
+            <p>Confira o clima atual e a previsão diária para sete datas locais.</p>
+          </article>
+          <article class="overview-card">
+            <span class="card-number">03</span>
+            <h3>Ajuste a visualização</h3>
+            <p>Quando disponíveis, alterne a unidade de temperatura e o tema visual.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="buscar" aria-labelledby="buscar-titulo">
+        <div class="section-heading section-heading-inline">
+          <div>
+            <p class="eyebrow">CONSULTA</p>
+            <h2 id="buscar-titulo">Consultar uma cidade</h2>
+          </div>
+          <span class="section-index">01 / BUSCA</span>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-marker">1</span>
+            <div><h3>Informe o nome</h3><p>Digite a cidade no campo de busca. Espaços excedentes são removidos; se o campo ficar vazio, o painel orienta você a preencher a cidade.</p></div>
+          </li>
+          <li>
+            <span class="step-marker">2</span>
+            <div><h3>Inicie a busca</h3><p>Envie pelo botão de busca ou pressione <kbd>Enter</kbd>.</p></div>
+          </li>
+          <li>
+            <span class="step-marker">3</span>
+            <div><h3>Confirme a localidade</h3><p>Se houver cidades com o mesmo nome, escolha a opção identificada pela região e pelo país corretos.</p></div>
+          </li>
+          <li>
+            <span class="step-marker">4</span>
+            <div><h3>Leia os resultados ou tente novamente</h3><p>Após a consulta, o painel apresenta os dados da localidade escolhida. Se não houver correspondência ou o serviço falhar, siga a mensagem na tela e tente de novo quando apropriado.</p></div>
+          </li>
+        </ol>
+        <div class="tip-card">
+          <span class="tip-icon" aria-hidden="true">↗</span>
+          <p><strong>Uma nova busca continua no mesmo painel.</strong> A unidade escolhida permanece ativa enquanto a página atual estiver aberta.</p>
+        </div>
+      </section>
+
+      <section class="content-section results-section" id="resultados" aria-labelledby="resultados-titulo">
+        <div class="section-heading section-heading-inline">
+          <div>
+            <p class="eyebrow">LEITURA DOS DADOS</p>
+            <h2 id="resultados-titulo">O que aparece no painel</h2>
+          </div>
+          <span class="section-index">02 / RESULTADOS</span>
+        </div>
+        <div class="result-grid">
+          <article class="result-card current-card">
+            <div class="result-card-head"><span class="mini-icon current-icon" aria-hidden="true">◉</span><span>AGORA</span></div>
+            <h3>Condições atuais</h3>
+            <ul>
+              <li>Cidade e país</li>
+              <li>Temperatura e sensação térmica</li>
+              <li>Descrição das condições do tempo</li>
+              <li>Umidade e velocidade do vento</li>
+              <li>Horário local dos dados</li>
+            </ul>
+          </article>
+          <article class="result-card forecast-card">
+            <div class="result-card-head"><span class="mini-icon forecast-icon" aria-hidden="true">▤</span><span>PRÓXIMOS DIAS</span></div>
+            <h3>Previsão diária</h3>
+            <ul>
+              <li>Hoje e os seis dias seguintes</li>
+              <li>Datas no horário local da cidade</li>
+              <li>Descrição das condições esperadas</li>
+              <li>Temperaturas mínima e máxima por dia</li>
+            </ul>
+          </article>
+        </div>
+        <aside class="data-note">
+          <span class="data-note-mark" aria-hidden="true">↳</span>
+          <p>As condições atuais são descritas no PRD como baseadas em modelos meteorológicos. Elas não representam necessariamente uma medição direta de uma estação local. A atribuição à Open-Meteo deve estar visível no painel.</p>
+        </aside>
+      </section>
+
+      <section class="content-section customization" id="personalizar" aria-labelledby="personalizar-titulo">
+        <div class="section-heading">
+          <p class="eyebrow">PREFERÊNCIAS</p>
+          <h2 id="personalizar-titulo">Personalizar o painel</h2>
+          <p>Os controles descritos abaixo pertencem à especificação de produto; a disponibilidade na versão em uso não está confirmada.</p>
+        </div>
+
+        <article class="feature-row" id="temperatura">
+          <div class="feature-symbol temp-symbol" aria-hidden="true"><span>°</span><small>C / F</small></div>
+          <div class="feature-copy">
+            <p class="feature-label">UNIDADE DE TEMPERATURA</p>
+            <h3>Alternar entre Celsius e Fahrenheit</h3>
+            <p>Use o botão de unidade no topo do painel. Ele atualiza a temperatura atual, a sensação térmica e as mínimas e máximas da previsão. A umidade e o vento não mudam, e a alternância não inicia outra consulta meteorológica.</p>
+            <div class="feature-details">
+              <span><b>Nova visita ou recarga</b> começa em Celsius.</span>
+              <span><b>Mesma página</b> mantém sua escolha ao pesquisar outra cidade.</span>
+              <span><b>Conversão de referência</b> 25 °C = 77 °F.</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-row" id="aparencia">
+          <div class="feature-symbol theme-symbol" aria-hidden="true"><span class="theme-moon">◐</span><span class="theme-sun">☼</span></div>
+          <div class="feature-copy">
+            <p class="feature-label">TEMA VISUAL</p>
+            <h3>Alternar entre tema escuro e claro</h3>
+            <p>Quando disponível, use o botão no cabeçalho para trocar o tema sem recarregar a página. A mudança deve preservar a busca em andamento.</p>
+            <div class="feature-details">
+              <span>Uma nova aba começa no tema escuro.</span>
+              <span>Sua escolha fica na aba atual, inclusive após recarregar.</span>
+              <span>Ao fechar a aba, uma nova começa novamente no escuro.</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-section location-section" id="localizacao" aria-labelledby="localizacao-titulo">
+        <div class="location-panel">
+          <div class="location-illustration" aria-hidden="true"><span class="location-ring"></span><span class="location-pin">●</span></div>
+          <div>
+            <p class="eyebrow">ATALHO OPCIONAL</p>
+            <h2 id="localizacao-titulo">Usar a localização</h2>
+            <p>Se o painel oferecer esse atalho, inicie a ação e conceda a permissão solicitada pelo navegador. Se negar a permissão ou a localização não estiver disponível, a busca manual continua sendo o caminho principal.</p>
+            <p class="location-caveat"><strong>O fluxo exato ainda está em aberto:</strong> o PRD não define se a localização preenche uma sugestão de cidade ou inicia a consulta diretamente.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section help-section" id="ajuda" aria-labelledby="ajuda-titulo">
+        <div class="section-heading section-heading-inline">
+          <div>
+            <p class="eyebrow">AJUDA E LIMITES</p>
+            <h2 id="ajuda-titulo">Problemas e privacidade</h2>
+          </div>
+          <span class="section-index">03 / AJUDA</span>
+        </div>
+        <div class="help-table-wrap">
+          <table>
+            <thead><tr><th scope="col">Se acontecer</th><th scope="col">O que fazer</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">A busca está vazia</th><td>Informe uma cidade. Uma busca vazia não deve apresentar dados antigos como resultado da nova consulta.</td></tr>
+              <tr><th scope="row">A cidade não aparece</th><td>Confira a escrita e tente novamente. Se houver nomes iguais, selecione a região e o país corretos.</td></tr>
+              <tr><th scope="row">O serviço falha ou demora</th><td>Leia a mensagem apresentada e tente novamente quando a opção estiver disponível. O PRD não define um tempo exato para caracterizar demora.</td></tr>
+              <tr><th scope="row">A localização foi negada</th><td>Faça a busca digitando o nome da cidade.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="privacy-grid">
+          <article class="privacy-card">
+            <span class="privacy-symbol" aria-hidden="true">⌕</span>
+            <div><h3>Sem conta e sem histórico de buscas</h3><p>O escopo documentado é voltado a visitantes. Cadastro, favoritos, histórico de buscas e armazenamento persistente das consultas estão fora do PRD.</p></div>
+          </article>
+          <article class="privacy-card">
+            <span class="privacy-symbol" aria-hidden="true">⌖</span>
+            <div><h3>Localização sob sua ação</h3><p>O produto não deve solicitar nem usar localização sem ação e permissão. A localização não deve ser guardada após a consulta; detalhes de logs e retenção técnica ainda não foram definidos.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sources-section" id="referencias" aria-labelledby="referencias-titulo">
+        <div class="sources-heading">
+          <p class="eyebrow">BASE DESTE GUIA</p>
+          <h2 id="referencias-titulo">Referências do produto</h2>
+          <p>Este manual resume os requisitos registrados na wiki. Consulte as páginas de origem para detalhes e questões ainda abertas.</p>
+        </div>
+        <div class="source-links">
+          <a href="../../capacidades/painel-de-clima.md">Painel de clima <span aria-hidden="true">↗</span></a>
+          <a href="../../fluxos/consultar-clima-por-cidade.md">Fluxo de consulta <span aria-hidden="true">↗</span></a>
+          <a href="../../capacidades/alternancia-de-unidade-de-temperatura.md">Unidade de temperatura <span aria-hidden="true">↗</span></a>
+          <a href="../../capacidades/alternancia-de-tema-visual.md">Tema visual <span aria-hidden="true">↗</span></a>
+          <a href="../../restricoes/privacidade-da-localizacao.md">Privacidade da localização <span aria-hidden="true">↗</span></a>
+          <a href="../../integracoes/open-meteo.md">Integração Open-Meteo <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <span>PAINEL DE CLIMA</span>
+        <span>Manual baseado em requisitos; implementação não confirmada.</span>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

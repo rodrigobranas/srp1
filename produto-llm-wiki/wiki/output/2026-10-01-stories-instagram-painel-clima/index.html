@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prévia de três conceitos visuais 9:16 para Stories do Painel de clima.">
+  <title>Prévias de Stories — Painel de clima</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#stories">Pular para as prévias</a>
+
+  <header class="masthead">
+    <div class="masthead-copy">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> PRÉVIAS PARA VALIDAÇÃO</p>
+      <h1>Stories do Painel de clima</h1>
+      <p class="intro">Três conceitos verticais para apresentar busca por cidade, previsão diária e escolha de unidade de temperatura.</p>
+    </div>
+    <div class="status-pill"><span></span> 3 conceitos · formato 9:16</div>
+  </header>
+
+  <aside class="review-note" role="note">
+    <span class="note-mark" aria-hidden="true">i</span>
+    <p><strong>Material para validação visual.</strong> As fontes não definem marca, paleta ou telas oficiais e não confirmam a implementação em produção. Os nomes e controles dentro das peças são ilustrativos; não há dados meteorológicos ao vivo.</p>
+  </aside>
+
+  <main id="stories" class="story-grid">
+    <article class="story-column">
+      <div class="story story-week" aria-label="Story 1: previsão para hoje e os próximos seis dias">
+        <div class="story-orbit orbit-one"></div>
+        <div class="story-orbit orbit-two"></div>
+        <div class="week-sun" aria-hidden="true"></div>
+        <div class="week-cloud" aria-hidden="true"><i></i><b></b></div>
+        <div class="story-content">
+          <div class="story-brand"><span class="brand-glyph" aria-hidden="true">☼</span><span>PAINEL DE CLIMA</span></div>
+          <p class="story-kicker">SUA SEMANA, EM PERSPECTIVA</p>
+          <h2>Tenha a previsão<br>à vista.</h2>
+          <p class="story-description">Confira o clima de hoje e dos próximos seis dias para a cidade que você escolher.</p>
+
+          <div class="forecast-card" aria-label="Ilustração de uma previsão diária de sete datas">
+            <div class="forecast-card-head"><span>PREVISÃO DIÁRIA</span><span>7 DATAS</span></div>
+            <div class="forecast-days" aria-hidden="true">
+              <span><b>H</b><i class="weather-dot sun-dot"></i><em>—</em></span>
+              <span><b>+1</b><i class="weather-dot cloud-dot"></i><em>—</em></span>
+              <span><b>+2</b><i class="weather-dot sun-dot"></i><em>—</em></span>
+              <span><b>+3</b><i class="weather-dot cloud-dot"></i><em>—</em></span>
+              <span><b>+4</b><i class="weather-dot sun-dot"></i><em>—</em></span>
+              <span><b>+5</b><i class="weather-dot cloud-dot"></i><em>—</em></span>
+              <span><b>+6</b><i class="weather-dot sun-dot"></i><em>—</em></span>
+            </div>
+            <div class="forecast-legend"><span></span> mínimas e máximas por dia</div>
+          </div>
+
+          <div class="story-cta cta-light">Ver previsão <span aria-hidden="true">↗</span></div>
+          <p class="story-foot">CONSULTE A PREVISÃO DA SUA CIDADE</p>
+        </div>
+      </div>
+      <div class="story-caption"><span class="caption-number">01</span><div><h2>Planeje os próximos dias</h2><p>Foco na previsão diária de sete datas.</p></div></div>
+    </article>
+
+    <article class="story-column">
+      <div class="story story-city" aria-label="Story 2: busca por cidade e escolha da localidade correta">
+        <div class="map-lines" aria-hidden="true"></div>
+        <div class="map-pin pin-a" aria-hidden="true">•</div>
+        <div class="map-pin pin-b" aria-hidden="true">•</div>
+        <div class="story-content city-content">
+          <div class="story-brand city-brand"><span class="brand-glyph" aria-hidden="true">⌖</span><span>PAINEL DE CLIMA</span></div>
+          <p class="story-kicker">BUSCA POR CIDADE</p>
+          <h2>Encontre o clima<br>da cidade certa.</h2>
+          <p class="story-description">Pesquise pelo nome e escolha a localidade pela região e pelo país.</p>
+
+          <div class="search-mock" aria-hidden="true">
+            <span class="search-icon"></span>
+            <span>Digite uma cidade</span>
+            <span class="search-enter">↵</span>
+          </div>
+          <div class="city-options" aria-hidden="true">
+            <div class="city-option selected-option">
+              <span class="option-pin">⌖</span>
+              <span class="option-copy"><b>Cidade escolhida</b><small>Região · País</small></span>
+              <span class="option-check">✓</span>
+            </div>
+            <div class="city-option">
+              <span class="option-pin">⌖</span>
+              <span class="option-copy"><b>Outra localidade</b><small>Região · País</small></span>
+              <span class="option-arrow">↗</span>
+            </div>
+          </div>
+
+          <div class="city-message"><span class="message-mark">✓</span><span>Veja as condições da localidade selecionada.</span></div>
+          <div class="story-cta cta-green">Buscar minha cidade <span aria-hidden="true">↗</span></div>
+          <p class="story-foot city-foot">SEM PRECISAR CRIAR UMA CONTA</p>
+        </div>
+      </div>
+      <div class="story-caption"><span class="caption-number">02</span><div><h2>A cidade certa</h2><p>Destaque para a busca e a desambiguação.</p></div></div>
+    </article>
+
+    <article class="story-column">
+      <div class="story story-units" aria-label="Story 3: alternância entre Celsius e Fahrenheit">
+        <div class="unit-orb orb-left" aria-hidden="true"></div>
+        <div class="unit-orb orb-right" aria-hidden="true"></div>
+        <div class="unit-spark spark-one" aria-hidden="true">✳</div>
+        <div class="unit-spark spark-two" aria-hidden="true">✳</div>
+        <div class="story-content unit-content">
+          <div class="story-brand"><span class="brand-glyph" aria-hidden="true">°</span><span>PAINEL DE CLIMA</span></div>
+          <p class="story-kicker">DO SEU JEITO</p>
+          <h2>°C ou °F?<br>Você escolhe.</h2>
+          <p class="story-description">Alterne a unidade e acompanhe as temperaturas no formato que prefere.</p>
+
+          <div class="unit-switch" aria-label="Ilustração de controle Celsius e Fahrenheit">
+            <span class="unit-option active-unit">°C</span>
+            <span class="unit-divider" aria-hidden="true">↔</span>
+            <span class="unit-option">°F</span>
+          </div>
+          <div class="conversion-card">
+            <span class="conversion-label">EXEMPLO DE CONVERSÃO</span>
+            <div class="conversion-values"><b>23,4°<small>C</small></b><span>↔</span><b>74,1°<small>F</small></b></div>
+            <span class="conversion-foot">A sensação térmica e as mínimas e máximas acompanham a unidade.</span>
+          </div>
+          <div class="story-cta cta-dark">Ver como funciona <span aria-hidden="true">↗</span></div>
+          <p class="story-foot">CADA TEMPERATURA COM SUA UNIDADE</p>
+        </div>
+      </div>
+      <div class="story-caption"><span class="caption-number">03</span><div><h2>°C ou °F</h2><p>Apresente a alternância de unidade.</p></div></div>
+    </article>
+  </main>
+
+  <section class="validation-footer" aria-labelledby="validation-title">
+    <div>
+      <p class="eyebrow">PONTOS PARA VALIDAR</p>
+      <h2 id="validation-title">Antes de publicar</h2>
+    </div>
+    <ul>
+      <li>Confirmar que busca, previsão de sete datas e alternância de unidade estão disponíveis na versão divulgada.</li>
+      <li>Substituir “Painel de clima” pela marca aprovada e ligar as chamadas para ação ao destino correto.</li>
+      <li>Trocar as telas esquemáticas por capturas reais aprovadas, se preferir mostrar a interface.</li>
+    </ul>
+  </section>
+
+  <footer class="source-footer">
+    <span>CONCEITOS VISUAIS · NÃO SÃO CAPTURAS DO PRODUTO</span>
+    <nav aria-label="Referências do produto">
+      <a href="../../capacidades/painel-de-clima.md">Painel de clima</a>
+      <a href="../../fluxos/consultar-clima-por-cidade.md">Fluxo de consulta</a>
+      <a href="../../capacidades/alternancia-de-unidade-de-temperatura.md">Unidades</a>
+    </nav>
+  </footer>
+</body>
+</html>
