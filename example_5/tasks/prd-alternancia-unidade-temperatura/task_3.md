@@ -32,10 +32,10 @@ O `AGENTS.md` e todas as rules em `.agents/rules/` foram lidos: `code-standards.
 
 ## Subtarefas
 
-- [ ] 3.1 Manter `TemperatureUnit` em estado local de `WeatherView`, iniciar em Celsius e renderizar `TemperatureUnitToggle` no cabeçalho sem remontar a tela durante buscas.
-- [ ] 3.2 Passar `temperatureUnit` para `CurrentWeatherCard` e `DailyForecast`; usar o formatador compartilhado em todas as temperaturas e preservar as unidades de umidade e vento.
-- [ ] 3.3 Atualizar testes unitários dos cards e o teste de acessibilidade existente; criar testes de integração para troca de unidade, chamadas à API, novas pesquisas e reinício após recarga.
-- [ ] 3.4 Validar a implementação com `npm run typecheck`, `npm run lint` e `npm run test:coverage` no frontend.
+- [x] 3.1 Manter `TemperatureUnit` em estado local de `WeatherView`, iniciar em Celsius e renderizar `TemperatureUnitToggle` no cabeçalho sem remontar a tela durante buscas.
+- [x] 3.2 Passar `temperatureUnit` para `CurrentWeatherCard` e `DailyForecast`; usar o formatador compartilhado em todas as temperaturas e preservar as unidades de umidade e vento.
+- [x] 3.3 Atualizar testes unitários dos cards e o teste de acessibilidade existente; criar testes de integração para troca de unidade, chamadas à API, novas pesquisas e reinício após recarga.
+- [x] 3.4 Validar a implementação com `npm run typecheck`, `npm run lint` e `npm run test:coverage` no frontend.
 
 ## Detalhes de implementação
 
@@ -56,14 +56,14 @@ Consultar `techspec.md`, seções “Visão dos componentes”, “Modelos de da
 
 ### Testes de unidade (se aplicável)
 
-- [ ] TU-05 — Exibe temperatura atual e sensação térmica na unidade recebida
-- [ ] TU-06 — Exibe mínimas e máximas na unidade recebida
+- [x] TU-05 — Exibe temperatura atual e sensação térmica na unidade recebida
+- [x] TU-06 — Exibe mínimas e máximas na unidade recebida
 
 ### Testes de integração (se aplicável)
 
-- [ ] TI-01 — Alterna todas as temperaturas sem nova chamada à API
-- [ ] TI-02 — Mantém Fahrenheit ao carregar outra cidade e reinicia em Celsius após recarga
-- [ ] TI-03 — Opera o controle por teclado na ordem acessível da página
+- [x] TI-01 — Alterna todas as temperaturas sem nova chamada à API
+- [x] TI-02 — Mantém Fahrenheit ao carregar outra cidade e reinicia em Celsius após recarga
+- [x] TI-03 — Opera o controle por teclado na ordem acessível da página
 
 ### Testes E2E (se aplicável)
 

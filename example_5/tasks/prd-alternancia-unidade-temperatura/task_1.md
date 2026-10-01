@@ -30,9 +30,9 @@ O `AGENTS.md` e todas as rules em `.agents/rules/` foram lidos: `code-standards.
 
 ## Subtarefas
 
-- [ ] 1.1 Criar `TemperatureUnit` em `frontend/src/types/temperature.ts` com as opções `celsius` e `fahrenheit`.
-- [ ] 1.2 Criar `formatTemperature` em `frontend/src/lib/temperature.ts`, aplicando a conversão e a formatação especificadas na TechSpec e retornando `Indisponível` para `null`.
-- [ ] 1.3 Criar testes unitários da fórmula, da formatação pt-BR, da precisão e dos valores nulos em `frontend/src/lib/temperature.test.ts`.
+- [x] 1.1 Criar `TemperatureUnit` em `frontend/src/types/temperature.ts` com as opções `celsius` e `fahrenheit`.
+- [x] 1.2 Criar `formatTemperature` em `frontend/src/lib/temperature.ts`, aplicando a conversão e a formatação especificadas na TechSpec e retornando `Indisponível` para `null`.
+- [x] 1.3 Criar testes unitários da fórmula, da formatação pt-BR, da precisão e dos valores nulos em `frontend/src/lib/temperature.test.ts`.
 
 ## Detalhes de implementação
 
@@ -49,9 +49,9 @@ Consultar `techspec.md`, seções “Principais interfaces”, “Modelos de dad
 
 ### Testes de unidade (se aplicável)
 
-- [ ] TU-01 — Converte temperaturas de Celsius para Fahrenheit
-- [ ] TU-02 — Formata as duas unidades em português brasileiro
-- [ ] TU-03 — Mantém valores indisponíveis e Celsius original
+- [x] TU-01 — Converte temperaturas de Celsius para Fahrenheit
+- [x] TU-02 — Formata as duas unidades em português brasileiro
+- [x] TU-03 — Mantém valores indisponíveis e Celsius original
 
 ### Testes de integração (se aplicável)
 

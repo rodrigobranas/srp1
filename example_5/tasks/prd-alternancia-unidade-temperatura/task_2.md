@@ -28,9 +28,9 @@ O `AGENTS.md` e todas as rules em `.agents/rules/` foram lidos: `code-standards.
 
 ## Subtarefas
 
-- [ ] 2.1 Criar `TemperatureUnitToggle` em `frontend/src/components/weather/TemperatureUnitToggle.tsx`, recebendo `unit` e `onToggle` por props explícitas.
-- [ ] 2.2 Usar o componente `Button` existente, com `type="button"`, `aria-pressed`, texto visível da unidade ativa, nome acessível que informe unidade atual e destino, e foco visível.
-- [ ] 2.3 Criar teste unitário que valide nome acessível, estado e ativação por Enter e Espaço em `TemperatureUnitToggle.test.tsx`.
+- [x] 2.1 Criar `TemperatureUnitToggle` em `frontend/src/components/weather/TemperatureUnitToggle.tsx`, recebendo `unit` e `onToggle` por props explícitas.
+- [x] 2.2 Usar o componente `Button` existente, com `type="button"`, `aria-pressed`, texto visível da unidade ativa, nome acessível que informe unidade atual e destino, e foco visível.
+- [x] 2.3 Criar teste unitário que valide nome acessível, estado e ativação por Enter e Espaço em `TemperatureUnitToggle.test.tsx`.
 
 ## Detalhes de implementação
 
@@ -44,7 +44,7 @@ Consultar `techspec.md`, seções “Visão dos componentes”, “Principais in
 
 ### Testes de unidade (se aplicável)
 
-- [ ] TU-04 — Expõe estado e ação acessíveis no botão de unidade
+- [x] TU-04 — Expõe estado e ação acessíveis no botão de unidade
 
 ### Testes de integração (se aplicável)
 

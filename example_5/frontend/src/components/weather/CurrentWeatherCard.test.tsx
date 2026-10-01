@@ -12,13 +12,24 @@ const forecast: WeatherForecast = {
 describe('CurrentWeatherCard', () => {
   it('shows current conditions, units, local time and an unavailable value label', () => {
     // When
-    render(<CurrentWeatherCard locationName="São Paulo" country="Brasil" forecast={forecast} />)
+    render(<CurrentWeatherCard locationName="São Paulo" country="Brasil" forecast={forecast} temperatureUnit="celsius" />)
     // Then
     expect(screen.getByRole('heading', { name: 'São Paulo, Brasil' })).toBeInTheDocument()
     expect(screen.getByText('Parcialmente nublado')).toBeInTheDocument()
     expect(screen.getByText('23,4°C')).toBeInTheDocument()
     expect(screen.getByText('Indisponível')).toBeInTheDocument()
     expect(screen.getByText(/09:15/)).toBeInTheDocument()
+    expect(screen.getByText('13,2 km/h')).toBeInTheDocument()
+  })
+  it('converts current and apparent temperatures while preserving humidity and wind units', () => {
+    // Given
+    const warmForecast: WeatherForecast = { ...forecast, current: { ...forecast.current, temperatureC: 25, apparentTemperatureC: 20 } }
+    // When
+    render(<CurrentWeatherCard locationName="São Paulo" country="Brasil" forecast={warmForecast} temperatureUnit="fahrenheit" />)
+    // Then
+    expect(screen.getByText('77°F')).toBeInTheDocument()
+    expect(screen.getByText('68°F')).toBeInTheDocument()
+    expect(screen.getByText('54%')).toBeInTheDocument()
     expect(screen.getByText('13,2 km/h')).toBeInTheDocument()
   })
 })

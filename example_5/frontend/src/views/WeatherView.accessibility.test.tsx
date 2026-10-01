@@ -16,6 +16,16 @@ describe('WeatherView keyboard access', () => {
     // When
     await user.tab()
     // Then
+    const unitToggle = screen.getByRole('button', { name: 'Temperatura em Celsius. Alternar para Fahrenheit' })
+    expect(unitToggle).toHaveFocus()
+    expect(unitToggle.className).toContain('focus-visible:ring-2')
+    // When
+    await user.keyboard('{Enter}')
+    // Then
+    expect(screen.getByRole('button', { name: 'Temperatura em Fahrenheit. Alternar para Celsius' })).toHaveAttribute('aria-pressed', 'true')
+    // When
+    await user.tab()
+    // Then
     const search = screen.getByRole('textbox', { name: 'Cidade' })
     expect(search).toHaveFocus()
     expect(search.className).toContain('focus-visible:ring-4')

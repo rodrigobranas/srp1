@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { CurrentWeatherCard } from '@/components/weather/CurrentWeatherCard'
 import { DailyForecast } from '@/components/weather/DailyForecast'
+import { TemperatureUnitToggle } from '@/components/weather/TemperatureUnitToggle'
 import { WeatherAttribution } from '@/components/weather/WeatherAttribution'
 import { WeatherFeedback } from '@/components/weather/WeatherFeedback'
 import { WeatherLocationButton } from '@/components/weather/WeatherLocationButton'
@@ -7,6 +9,7 @@ import { WeatherLocationResults } from '@/components/weather/WeatherLocationResu
 import { WeatherSearchForm } from '@/components/weather/WeatherSearchForm'
 import { useWeather } from '@/hooks/use-weather'
 import { BrowserGeolocation } from '@/hooks/use-browser-location'
+import { TemperatureUnit } from '@/types/temperature'
 
 interface WeatherViewProps {
   geolocation?: BrowserGeolocation | null
@@ -14,11 +17,13 @@ interface WeatherViewProps {
 
 export function WeatherView({ geolocation }: WeatherViewProps) {
   const weather = useWeather(undefined, geolocation)
+  const [temperatureUnit, setTemperatureUnit] = useState<TemperatureUnit>('celsius')
+  const toggleTemperatureUnit = () => setTemperatureUnit((unit) => unit === 'celsius' ? 'fahrenheit' : 'celsius')
   return (
     <main id="weather-main" className="min-h-screen bg-slate-50 text-slate-900">
       <a className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:shadow-lg" href="#city-search">Pular para busca</a>
       <div className="mx-auto flex max-w-6xl flex-col gap-7 px-4 py-8 sm:px-8 sm:py-12">
-        <header className="max-w-3xl"><p className="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Painel de clima</p><h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">O clima para os seus planos</h1><p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">Pesquise uma cidade para ver as condições atuais e a previsão local para os próximos sete dias.</p></header>
+        <header className="flex max-w-3xl flex-col gap-5 sm:flex-row sm:items-start sm:justify-between"><div><p className="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Painel de clima</p><h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">O clima para os seus planos</h1><p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">Pesquise uma cidade para ver as condições atuais e a previsão local para os próximos sete dias.</p></div><TemperatureUnitToggle unit={temperatureUnit} onToggle={toggleTemperatureUnit} /></header>
         <section aria-label="Buscar clima" className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
           <div className="space-y-5">
             <WeatherSearchForm value={weather.query} isLoading={weather.isLoading} feedbackId="weather-feedback" onChange={weather.setQuery} onSearch={weather.search} />
@@ -29,8 +34,8 @@ export function WeatherView({ geolocation }: WeatherViewProps) {
         </section>
         {weather.result ? <section aria-label="Resultado do clima" className="space-y-7">
           <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">Clima e previsão carregados para {weather.result.locationName}{weather.result.country ? `, ${weather.result.country}` : ''}.</p>
-          <CurrentWeatherCard locationName={weather.result.locationName} country={weather.result.country} forecast={weather.result.forecast} />
-          <DailyForecast days={weather.result.forecast.daily} />
+          <CurrentWeatherCard locationName={weather.result.locationName} country={weather.result.country} forecast={weather.result.forecast} temperatureUnit={temperatureUnit} />
+          <DailyForecast days={weather.result.forecast.daily} temperatureUnit={temperatureUnit} />
         </section> : null}
         <WeatherAttribution />
       </div>

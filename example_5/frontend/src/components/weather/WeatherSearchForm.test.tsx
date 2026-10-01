@@ -4,6 +4,14 @@ import { describe, expect, it, vi } from 'vitest'
 import { WeatherSearchForm } from './WeatherSearchForm'
 
 describe('WeatherSearchForm', () => {
+  it('keeps the city example placeholder readable on the white search field', () => {
+    // Given
+    render(<WeatherSearchForm value="" isLoading={false} feedbackId="weather-feedback" onChange={vi.fn()} onSearch={vi.fn()} />)
+    // When
+    const citySearch = screen.getByRole('textbox', { name: 'Cidade' })
+    // Then
+    expect(citySearch).toHaveClass('placeholder:text-slate-500')
+  })
   it('submits an accessible city search with the Enter key', async () => {
     // Given
     const onSearch = vi.fn()
