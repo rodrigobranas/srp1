@@ -1,0 +1,1 @@
+Use linguagem javascript, seja sempre simples e objetivo.
