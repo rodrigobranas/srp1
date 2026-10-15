@@ -1,0 +1,28 @@
+# Banco vetorial local: PostgreSQL + extensão pgvector.
+# O mesmo servidor tem dois bancos:
+#   rag         o banco vetorial (create.sql)
+#   prontuario  a fonte de dados da aula: prontuários fictícios de 500 pacientes (prontuario.sql)
+# Os scripts rodam automaticamente, em ordem, na primeira vez que o volume é criado (docker compose down -v recria tudo).
+# O name evita conflito com o projeto formacao-inteligencia-artificial/rag: as duas pastas se chamam "rag",
+# e sem ele o Docker usaria o mesmo nome de projeto e o mesmo volume para os dois.
+name: serpro-rag
+
+services:
+  database:
+    image: pgvector/pgvector:pg17
+    container_name: serpro-rag-database
+    # A criação do índice HNSW em paralelo usa memória compartilhada; o padrão do Docker (64 MB) não basta.
+    shm_size: 1g
+    environment:
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: rag
+      POSTGRES_DB: rag
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./database/create.sql:/docker-entrypoint-initdb.d/01-create.sql:ro
+      - ./database/prontuario.sql:/docker-entrypoint-initdb.d/02-prontuario.sql:ro
+      - rag-data:/var/lib/postgresql/data
+
+volumes:
+  rag-data:

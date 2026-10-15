@@ -1,0 +1,20 @@
+{
+  "name": "rag",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "ingest": "bun 01-ingest.ts",
+    "chunk": "bun 02-chunking.ts",
+    "embed": "bun 03-embedding.ts",
+    "store": "bun 04-store.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "gpt-tokenizer": "^4.0.0"
+  }
+}
